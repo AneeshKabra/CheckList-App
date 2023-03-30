@@ -1,0 +1,51 @@
+Scaffold(
+      body: NestedScrollView(
+        scrollDirection: Axis.vertical,
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              pinned: false,
+              title: Text('Flutter Demo'),
+            ),
+          ];
+        },
+        body: Row(
+          children: [
+            FlutterLogo(
+              size: 100.0,
+              textColor: Colors.red,
+            ),
+            Container(
+              width: 300.0,
+              child: ListView.builder(
+                itemCount: 60,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text('Item $index');
+                },
+              ),
+            ),
+            FlutterLogo(size: 100.0, textColor: Colors.orange),
+            Container(
+              width: 300.0,
+              child: ListView.builder(
+                itemCount: 60,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text('Item ${index + 10}');
+                },
+              ),
+            ),
+            Container(
+              width: 300.0,
+              child: ListView.builder(
+                itemCount: 60,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text('Item ${index * 2}');
+                },
+              ),
+            ),
+            FlutterLogo(size: 100.0, textColor: Colors.orange),
+            FlutterLogo(size: 100.0, textColor: Colors.orange),
+          ],
+        ),
+      ),
+    );
